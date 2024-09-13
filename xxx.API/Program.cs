@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 using xxx.Repository.Interfaces;
 using xxx.Repository.Models;
 using xxx.Repository.Repositories;
@@ -15,6 +16,9 @@ builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddScoped<IDirectorRepository, DirectorRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddControllers().AddJsonOptions(
+            options => options.JsonSerializerOptions.ReferenceHandler
+            = ReferenceHandler.IgnoreCycles);
 //builder.Services.AddScoped<IMovieRepository, OracleMovieRepository>();
 builder.Services.AddDbContext<DataContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("xxxxconstring")));
