@@ -22,6 +22,10 @@ namespace xxx.Repository.Repositories
         {
            return await _context.Directors.ToListAsync();
         }
+        public async Task<Director> GetDirectorById(int id)
+        {
+            return await _context.Directors.FirstOrDefaultAsync(x => x.Id == id);
+        }
         public async Task<Director> CreateDirector(Director director)
         {
             _context.Directors.Add(director);

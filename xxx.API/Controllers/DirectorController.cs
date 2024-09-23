@@ -22,6 +22,16 @@ namespace xxx.API.Controllers
             var directors = await _repo.GetAllDirectors();
             return Ok(directors);
         }
+        [HttpGet("/id")]
+        public async Task<IActionResult> GetDirectorById(int id)
+        {
+            var director = await _repo.GetDirectorById(id);
+            if (director == null)
+            {
+                return NotFound();
+            }
+            return Ok(director);
+        }
         [HttpPost]
         public async Task<IActionResult> CreateDirector([FromBody]Director director)
         {
