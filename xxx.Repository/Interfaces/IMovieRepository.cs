@@ -14,8 +14,8 @@ namespace xxx.Repository.Interfaces
         Task<Movie>? CreateMovie(Movie movie);
         Task<bool> DeleteById(int id);
 
-        Task<IEnumerable<Director>> GetAllDirectors();
-        Task<IEnumerable<Genre>> GetAllGenres();
-        Task<IEnumerable<Review>> GetReviewsByMovieId(int movieId);
+        //Task<IEnumerable<Director>> GetAllDirectors();
+        //Task<IEnumerable<Genre>> GetAllGenres();
+        //Task<IEnumerable<Review>> GetReviewsByMovieId(int movieId);
     }
 }

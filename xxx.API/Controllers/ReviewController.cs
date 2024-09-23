@@ -21,6 +21,12 @@ namespace xxx.API.Controllers
             var reviews = await _Repo.GetAllReviews();
             return Ok(reviews);
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetReviewById(int id)
+        {
+            var foundReview = await _Repo.GetReviewById(id);
+            return Ok(foundReview);
+        }
         [HttpPost]
         public async Task<IActionResult> CreateReview([FromBody] Review review)
         {

@@ -10,6 +10,7 @@ namespace xxx.Repository.Interfaces
     public interface IDirectorRepository
     {
         Task<IEnumerable<Director>> GetAllDirectors();
+        Task<Director> GetDirectorById(int id);
         Task<Director> CreateDirector(Director director);
         Task<bool> DeleteDirector(int id);
     }

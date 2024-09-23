@@ -11,7 +11,7 @@ using xxx.Repository.Models;
 namespace xxx.Repository.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240909081452_inital")]
+    [Migration("20240916064904_inital")]
     partial class inital
     {
         /// <inheritdoc />

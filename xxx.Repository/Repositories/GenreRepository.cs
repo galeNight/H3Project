@@ -20,6 +20,11 @@ namespace xxx.Repository.Repositories
         {
             return await _Context.Genres.ToListAsync();
         }
+        public async Task<Genre> GetGrenreById(int id)
+        {
+            var foundGenre = await _Context.Genres.FirstOrDefaultAsync(x => x.Id == id);
+            return foundGenre ?? throw new KeyNotFoundException($"Genre with id {id} not found.");
+        }
         public async Task<Genre> CreateGenre(Genre genre)
         {
             _Context.Genres.Add(genre);

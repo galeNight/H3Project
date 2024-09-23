@@ -23,6 +23,12 @@ namespace xxx.API.Controllers
             var genres = await _repo.GetAllGenres();
             return Ok(genres);
         }
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetGrenreById(int id)
+        {
+            var foundGrenre = await _repo.GetGrenreById(id);
+            return Ok(foundGrenre);
+        }
         [HttpPost]
         public async Task<IActionResult> CreateGrenre([FromBody] Genre genre)
         {

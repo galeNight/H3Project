@@ -21,6 +21,11 @@ namespace xxx.Repository.Repositories
         {
             return await _Context.Reviews.ToListAsync();
         }
+        public async Task<Review> GetReviewById(int id)
+        {
+            var foundReview = await _Context.Reviews.FirstOrDefaultAsync(x => x.Id == id);
+            return foundReview ?? throw new KeyNotFoundException($"Review with id {id} not found.");
+        }
         public async Task<Review> CreateReview(Review review)
         {
             _Context.Reviews.Add(review);
@@ -39,6 +44,5 @@ namespace xxx.Repository.Repositories
             }
             return false;
         }
-
     }
 }

@@ -10,6 +10,7 @@ namespace xxx.Repository.Interfaces
     public interface IReviewRepository
     {
         Task<IEnumerable<Review>> GetAllReviews();
+        Task<Review> GetReviewById(int id);
         Task<Review> CreateReview(Review review);
         Task<bool> DeleteReview(int id);
     }
