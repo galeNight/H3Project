@@ -22,7 +22,7 @@ namespace xxx.API.Controllers
             var directors = await _repo.GetAllDirectors();
             return Ok(directors);
         }
-        [HttpGet("/id")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetDirectorById(int id)
         {
             var director = await _repo.GetDirectorById(id);
