@@ -19,8 +19,17 @@ namespace xxx.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllDirectors()
         {
-            var directors = await _repo.GetAllDirectors();
-            return Ok(directors);
+            try
+            {
+                var directors = await _repo.GetAllDirectors();
+                return Ok(directors);
+
+            }
+            catch (Exception e)
+            {
+                var something = "";
+            }
+            return BadRequest();
         }
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetDirectorById(int id)
@@ -38,7 +47,7 @@ namespace xxx.API.Controllers
             var newDirector = await _repo.CreateDirector(director);
             return CreatedAtAction(nameof(GetAllDirectors),new { id = director.Id },director);
         }
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int}")] 
         public async Task<IActionResult>DeleteDirector(int id)
         {
             var isDeleted = await _repo.DeleteDirector(id);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,10 +18,12 @@ namespace xxx.Repository.Models
         public float DurationMinutes { get; set; }
 
         // Relation til Director
+        [Required]
         public int DirectorId { get; set; }
         public Director Director { get; set; }
 
         // Relation til Genre
+        [Required]
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
 
