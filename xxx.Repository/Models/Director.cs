@@ -12,6 +12,6 @@ namespace xxx.Repository.Models
         public string Name { get; set; }
 
         // En instruktør kan have mange film
-        public ICollection<Movie> Movies { get; set; }
+        public ICollection<Movie>? Movies { get; set; }
     }
 }

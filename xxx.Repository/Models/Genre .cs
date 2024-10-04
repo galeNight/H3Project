@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace xxx.Repository.Models
 {
@@ -11,6 +12,7 @@ namespace xxx.Repository.Models
         public string Name { get; set; }
 
         // En genre kan have mange film
-        public ICollection<Movie> Movies { get; set; }
+        [JsonIgnore]
+        public ICollection<Movie>? Movies { get; set; }
     }
 }

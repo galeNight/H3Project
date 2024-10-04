@@ -18,11 +18,11 @@ namespace xxx.Repository.Models
 
         // Relation til Director
         public int DirectorId { get; set; }
-        public Director Director { get; set; }
+        public Director ?Director { get; set; }
 
         // Relation til Genre
         public int GenreId { get; set; }
-        public Genre Genre { get; set; }
+        public Genre ?Genre { get; set; }
 
         // En film kan have mange anmeldelser
         public ICollection<Review> Reviews { get; set; }
