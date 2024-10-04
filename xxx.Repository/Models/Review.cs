@@ -12,7 +12,7 @@ namespace xxx.Repository.Models
         public string Comment { get; set; }
 
         // Relation til Movie
-        public int MovieId { get; set; }
+        public int? MovieId { get; set; }
         public Movie? Movie { get; set; }
     }
 }
