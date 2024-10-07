@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using xxx.Repository.Interfaces;
 
@@ -15,7 +16,7 @@ namespace xxx.Repository.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string DurationMinutes { get; set; }
+        public int DurationMinutes { get; set; }
 
         // Relation til Director
         [Required]
@@ -28,6 +29,7 @@ namespace xxx.Repository.Models
         public Genre ?Genre { get; set; }
 
         // En film kan have mange anmeldelser
-        public ICollection<Review> Reviews { get; set; }
+        [JsonIgnore]
+        public ICollection<Review>? Reviews { get; set; }
     }
 }

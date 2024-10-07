@@ -12,8 +12,8 @@ using xxx.Repository.Models;
 namespace xxx.Repository.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241004123602_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241007063849_Create")]
+    partial class Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -94,8 +94,8 @@ namespace xxx.Repository.Migrations
                     b.Property<int>("DirectorId")
                         .HasColumnType("int");
 
-                    b.Property<float>("DurationMinutes")
-                        .HasColumnType("real");
+                    b.Property<int>("DurationMinutes")
+                        .HasColumnType("int");
 
                     b.Property<int>("GenreId")
                         .HasColumnType("int");
@@ -117,7 +117,7 @@ namespace xxx.Repository.Migrations
                         {
                             Id = 1,
                             DirectorId = 1,
-                            DurationMinutes = 33f,
+                            DurationMinutes = 33,
                             GenreId = 1,
                             Title = "Fight With The Mongols"
                         },
@@ -125,7 +125,7 @@ namespace xxx.Repository.Migrations
                         {
                             Id = 2,
                             DirectorId = 2,
-                            DurationMinutes = 33f,
+                            DurationMinutes = 33,
                             GenreId = 1,
                             Title = "Fight With The Small Mongols - The Movie"
                         },
@@ -133,7 +133,7 @@ namespace xxx.Repository.Migrations
                         {
                             Id = 3,
                             DirectorId = 2,
-                            DurationMinutes = 33f,
+                            DurationMinutes = 33,
                             GenreId = 2,
                             Title = "Fight With The Big Mongols - The End"
                         });

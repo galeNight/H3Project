@@ -37,7 +37,7 @@ namespace xxx.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMovie([FromBody]Movie movie)
+        public async Task<IActionResult> CreateMovie([FromBody] Movie movie)
         {
             if (movie == null)
             {
@@ -47,7 +47,7 @@ namespace xxx.API.Controllers
             // Return the newly created move
             return CreatedAtAction(nameof(GetMovieById), new { id = movie.Id }, movie);
         }
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult>DeleteByid(int id)
         {
             var isDeleted = await repo.DeleteById(id);

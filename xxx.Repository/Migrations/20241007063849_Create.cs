@@ -7,7 +7,7 @@
 namespace xxx.Repository.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Create : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,7 +45,7 @@ namespace xxx.Repository.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DurationMinutes = table.Column<float>(type: "real", nullable: false),
+                    DurationMinutes = table.Column<int>(type: "int", nullable: false),
                     DirectorId = table.Column<int>(type: "int", nullable: false),
                     GenreId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -109,9 +109,9 @@ namespace xxx.Repository.Migrations
                 columns: new[] { "Id", "DirectorId", "DurationMinutes", "GenreId", "Title" },
                 values: new object[,]
                 {
-                    { 1, 1, 33f, 1, "Fight With The Mongols" },
-                    { 2, 2, 33f, 1, "Fight With The Small Mongols - The Movie" },
-                    { 3, 2, 33f, 2, "Fight With The Big Mongols - The End" }
+                    { 1, 1, 33, 1, "Fight With The Mongols" },
+                    { 2, 2, 33, 1, "Fight With The Small Mongols - The Movie" },
+                    { 3, 2, 33, 2, "Fight With The Big Mongols - The End" }
                 });
 
             migrationBuilder.InsertData(
