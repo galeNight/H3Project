@@ -11,6 +11,6 @@ namespace xxx.Repository.Interfaces
     {
         int Id { get; set; }
         string Title { get; set; }
-        float DurationMinutes { get; set; }
+        string DurationMinutes { get; set; }
     }
 }

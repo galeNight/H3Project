@@ -15,7 +15,7 @@ namespace xxx.Repository.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public float DurationMinutes { get; set; }
+        public string DurationMinutes { get; set; }
 
         // Relation til Director
         [Required]
