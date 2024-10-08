@@ -48,7 +48,7 @@ namespace xxx.API.Controllers
             return CreatedAtAction(nameof(GetMovieById), new { id = movie.Id }, movie);
         }
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult>DeleteByid(int id)
+        public async Task<IActionResult> DeleteByid(int id)
         {
             var isDeleted = await repo.DeleteById(id);
             if (isDeleted)
@@ -58,6 +58,23 @@ namespace xxx.API.Controllers
             else
             {
                 return BadRequest();
+            }
+        }
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateMovie(int id, [FromBody] Movie movie)
+        {
+            if (id != movie.Id)
+            {
+                return BadRequest("Movie ID mismatch.");
+            }
+            try
+            {
+                var updatedMovie = await repo.UpdateMovie(movie);
+                return Ok(updatedMovie);
+            }
+            catch (KeyNotFoundException e)
+            {
+                return NotFound(e.Message);
             }
         }
     }

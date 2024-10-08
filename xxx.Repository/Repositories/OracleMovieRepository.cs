@@ -27,6 +27,11 @@ namespace xxx.Repository.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<Movie> UpdateMovie(Movie movie)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Movie>>? GetAllMovies()
         {
             //var listOFMovies = await _context.Movies.ToListAsync();

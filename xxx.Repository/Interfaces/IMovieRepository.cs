@@ -13,6 +13,7 @@ namespace xxx.Repository.Interfaces
         Task<Movie>? GetMovieById(int id);
         Task<Movie>? CreateMovie(Movie movie);
         Task<bool> DeleteById(int id);
+        Task<Movie> UpdateMovie(Movie movie);
 
         //Task<IEnumerable<Director>> GetAllDirectors();
         //Task<IEnumerable<Genre>> GetAllGenres();
