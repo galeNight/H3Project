@@ -214,14 +214,16 @@ namespace xxx.UnitTest
             Assert.Equal(movieId, result.Id);
         }
         [Fact]
-        public async Task GetMovieById_ThrowsKeyNotFoundException_WhenIdIsInvalid()
+        public async Task GetMovieById_null_WhenIdIsInvalid()
         {
             // Arrange
             var invalidMovieId = 999; // An ID that does not exist
 
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<KeyNotFoundException>(() => _movieRepository.GetMovieById(invalidMovieId));
-            Assert.Equal($"Movie with id {invalidMovieId} not found.", exception.Message);
+            // Act
+            var result = await _movieRepository.GetMovieById(invalidMovieId);
+
+            //Assert
+            Assert.Null(result);
         }
         [Fact]
         public async Task CreateMovie_AddsMovie()
@@ -304,15 +306,17 @@ namespace xxx.UnitTest
             Assert.Equal(updatedMovie.DurationMinutes, result.DurationMinutes);
         }
         [Fact]
-        public async Task UpdateMovie_ThrowsKeyNotFoundException_WhenIdIsInvalid()
+        public async Task UpdateMovie_null_WhenIdIsInvalid()
         {
             // Arrange
             var invalidMovieId = 999;
             var movie = new Movie { Id = invalidMovieId, Title = "Inception", DurationMinutes = 148, DirectorId = 1, GenreId = 1 };
 
-            // Act & Assert
-            var exception = await Assert.ThrowsAsync<KeyNotFoundException>(() => _movieRepository.UpdateMovie(movie));
-            Assert.Equal($"Movie with id {invalidMovieId} not found.", exception.Message);
+            // Act
+            var result = await _movieRepository.UpdateMovie(movie);
+
+            //Assert
+            Assert.Null(result);
         }
         //review true and false
         [Fact]
