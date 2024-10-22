@@ -76,9 +76,19 @@ namespace xxx.Repository.Models
 
             modelBuilder.Entity<Review>().HasData(
                 new Review { Id = 1, Rating = 5, Comment ="Greate Movie", MovieId = 1},
-                new Review { Id = 2, Rating = 3, Comment = "Not bad.", MovieId = 2 }
+                new Review { Id = 2, Rating = 3, Comment = "Not bad.", MovieId = 2 },
+                new Review { Id = 3, Rating = 1, Comment = "not gona watch again", MovieId = 3 },
+                new Review { Id = 4, Rating = 9, Comment = "awesome movie love the aactor that is left on mars", MovieId = 4 },
+                new Review { Id = 5, Rating = 2, Comment = "could be better", MovieId = 5 },
+                new Review { Id = 6, Rating = 6, Comment = "good movie", MovieId = 6 },
+                new Review { Id = 7, Rating = 8, Comment = "i am gona watch this with my familie next time", MovieId = 7 },
+                new Review { Id = 8, Rating = 7, Comment = "Love lovie this movie", MovieId = 8 },
+                new Review { Id = 9, Rating = 6, Comment = "awesome", MovieId = 9 },
+                new Review { Id = 10, Rating = 8, Comment = "good movie love it ", MovieId = 10 },
+                new Review { Id = 11, Rating = 9, Comment = "i am gona recommend to all i know", MovieId = 11 },
+                new Review { Id = 12, Rating = 2, Comment = "act better or i am gonna not gona watch you movies again", MovieId = 12 },
+                new Review { Id = 13, Rating = 1, Comment = "this is the worst movie ever", MovieId = 13 }
                 );
-
             base.OnModelCreating(modelBuilder);
         }
     }
