@@ -46,7 +46,7 @@ namespace xxx.Repository.Models
                 new Genre { Id = 7, Name = "musicals" },
                 new Genre { Id = 8, Name = "mystery" },
                 new Genre { Id = 9, Name = "romance" },
-                new Genre { Id = 10, Name = "science fiction" },
+                new Genre { Id = 10, Name = "sci-fi" },
                 new Genre { Id = 11, Name = "sports" },
                 new Genre { Id = 12, Name = "thriller" },
                 new Genre { Id = 13, Name = "Western" }
