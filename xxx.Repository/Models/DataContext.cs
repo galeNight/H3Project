@@ -33,11 +33,24 @@ namespace xxx.Repository.Models
 
             modelBuilder.Entity<Director>().HasData(
                 new Director { Id = 1, Name = "Steven Spielberg" },
-                new Director { Id = 2, Name = "Christopher Nolan" });
+                new Director { Id = 2, Name = "Christopher Nolan" }
+                );
 
             modelBuilder.Entity<Genre>().HasData(
                 new Genre { Id = 1, Name = "Action" },
-                new Genre { Id = 2, Name = "Drama" });
+                new Genre { Id = 2, Name = "adventure" },
+                new Genre { Id = 3, Name = "comedy" },
+                new Genre { Id = 4, Name = "Drama" },
+                new Genre { Id = 5, Name = "fantasy" },
+                new Genre { Id = 6, Name = "horror" },
+                new Genre { Id = 7, Name = "musicals" },
+                new Genre { Id = 8, Name = "mystery" },
+                new Genre { Id = 9, Name = "romance" },
+                new Genre { Id = 10, Name = "science fiction" },
+                new Genre { Id = 11, Name = "sports" },
+                new Genre { Id = 12, Name = "thriller" },
+                new Genre { Id = 13, Name = "Western" }
+                );
 
             modelBuilder.Entity<Review>().HasData(
                 new Review { Id = 1, Rating = 5, Comment ="Greate Movie", MovieId = 1},
